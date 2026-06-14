@@ -42,7 +42,7 @@ export const JobForm: React.FC<JobFormProps> = ({ onSubmit, onCancel }) => {
   };
 
   return (
-    <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: 'var(--border-radius)', padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
+    <div className="job-form-container">
       <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 600, marginBottom: '1.5rem' }}>
         Create Job Posting
       </h2>

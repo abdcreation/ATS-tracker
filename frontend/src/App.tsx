@@ -266,8 +266,7 @@ function App() {
                 </div>
               </div>
 
-              {/* Upload Panel and Kanban board */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: '2rem', alignItems: 'start' }}>
+              <div className="pipeline-layout">
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                   <PipelineBoard 
                     candidates={candidates}

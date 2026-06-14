@@ -99,7 +99,7 @@ export const CandidateModal: React.FC<CandidateModalProps> = ({
               <div className="report-sidebar">
                 <div className="score-circle-container">
                   <div className="score-circle">
-                    <svg height={radius * 2} width={radius * 2}>
+                    <svg viewBox={`0 0 ${radius * 2} ${radius * 2}`} width="100%" height="100%">
                       <circle
                         className="bg-ring"
                         r={normalizedRadius}
