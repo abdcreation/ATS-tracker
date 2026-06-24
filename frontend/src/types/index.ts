@@ -1,40 +1,49 @@
-export interface Job {
+export interface ProductConfig {
+  material: string;
+  color: string;
+  text: string;
+}
+
+export interface Product {
   id: string;
   title: string;
-  department: string;
-  location: string;
-  type: string;
+  price: number;
+  category: string;
   description: string;
-  skills: string[];
-  experience: number;
-  education: string;
-  status: 'Active' | 'Draft' | 'Closed';
-  createdAt: string;
+  features: string[];
+  defaultConfig: ProductConfig;
 }
 
-export interface ScoreBreakdown {
-  skills: number;
-  experience: number;
-  education: number;
-  completeness: number;
-}
-
-export interface Candidate {
+export interface CartItem {
   id: string;
-  jobId: string;
+  product: Product;
+  quantity: number;
+  config: ProductConfig;
+}
+
+export interface CustomerInfo {
   name: string;
   email: string;
   phone: string;
-  links: string[];
-  skills: string[];
-  experienceText: string;
-  educationText: string;
-  resumeText: string;
-  score: number;
-  scoreBreakdown: ScoreBreakdown;
-  matchedSkills: string[];
-  missingSkills: string[];
-  suggestions: string[];
-  status: 'Applied' | 'Screening' | 'Interview' | 'Offered' | 'Rejected';
+}
+
+export interface AddressInfo {
+  street: string;
+  city: string;
+  state: string;
+  zip: string;
+  country: string;
+}
+
+export interface Order {
+  id: string;
+  items: CartItem[];
+  customer: CustomerInfo;
+  billing: AddressInfo;
+  shipping?: AddressInfo;
+  total: number;
+  paymentMethod: string;
+  status: 'Processing' | 'Shipped' | 'Delivered' | 'Cancelled';
+  trackingNumber: string;
   createdAt: string;
 }

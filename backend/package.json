@@ -1,7 +1,7 @@
 {
-  "name": "ats-tracker-backend",
+  "name": "spheremedia-ecommerce-backend",
   "version": "1.0.0",
-  "description": "ATS Resume Tracker Backend",
+  "description": "SphereMedia E-Commerce Backend Server",
   "main": "server.js",
   "type": "commonjs",
   "scripts": {

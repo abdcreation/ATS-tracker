@@ -4,133 +4,99 @@ const path = require('path');
 const DB_FILE = path.join(__dirname, 'data.json');
 
 const defaultData = {
-  jobs: [
+  products: [
     {
-      id: "job-1",
-      title: "Senior React Developer",
-      department: "Engineering",
-      location: "San Francisco, CA (Hybrid)",
-      type: "Full-time",
-      description: "We are looking for a Senior Frontend Engineer with deep expertise in React, TypeScript, and modern state management. You will build user-facing features, design premium interfaces, and optimize performance.",
-      skills: ["React", "TypeScript", "Redux", "CSS", "HTML", "Webpack", "Git", "Jest"],
-      experience: 5,
-      education: "Bachelor's",
-      status: "Active",
-      createdAt: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000).toISOString() // 15 days ago
+      id: "prod-1",
+      title: "Hyperion Boardroom Holograph",
+      price: 12500.00,
+      category: "Marketing Hardware",
+      description: "A multi-user interactive holographic tabletop designed for executive pitch demonstrations. Renders high-fidelity campaign structures as floating 3D wireframe simulations.",
+      features: [
+        "360-degree holographic projection platter",
+        "Multi-touch gesture interaction base",
+        "High-lumen semiconductor light source",
+        "Enterprise cloud data synchronization"
+      ],
+      defaultConfig: {
+        material: "refractive-silica",
+        color: "#2563eb",
+        text: "HYPERION V1"
+      }
     },
     {
-      id: "job-2",
-      title: "Python Backend Engineer",
-      department: "Engineering",
-      location: "Remote (US/Canada)",
-      type: "Full-time",
-      description: "Join our core services team to design, build, and maintain robust API systems. You will work extensively with Python, Django, PostgreSQL, Docker, and AWS services. Experience with Redis and background task queues (Celery) is a major plus.",
-      skills: ["Python", "Django", "PostgreSQL", "Docker", "AWS", "Redis", "REST API", "Git"],
-      experience: 3,
-      education: "Bachelor's",
-      status: "Active",
-      createdAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString() // 7 days ago
+      id: "prod-2",
+      title: "Atlas Lobby Media Tower",
+      price: 8200.00,
+      category: "Marketing Hardware",
+      description: "Industrial-grade physical media pillar for corporate lobbies. Broadcasts live marketing campaign statistics, interactive brand messaging, and real-time news tickers.",
+      features: [
+        "Brushed aluminum vertical frame",
+        "Dual-sided high-density LED panels",
+        "Integrated sound direction array",
+        "Local campaign scheduling processor"
+      ],
+      defaultConfig: {
+        material: "brushed-steel",
+        color: "#d4af37",
+        text: "ATLAS TOWER"
+      }
     },
     {
-      id: "job-3",
-      title: "Product Designer",
-      department: "Design",
-      location: "New York, NY",
-      type: "Contract",
-      description: "We are seeking a talented Product Designer to own user research, prototyping, and UI design for our main client portal. Expertise in Figma, prototyping, user flows, and typography is required.",
-      skills: ["Figma", "UI Design", "UX Research", "Prototyping", "Wireframing", "Typography", "CSS"],
-      experience: 4,
-      education: "Any",
-      status: "Active",
-      createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString() // 3 days ago
+      id: "prod-3",
+      title: "Apex Campaign Server Node",
+      price: 15400.00,
+      category: "Infrastructure",
+      description: "Rack-mounted dedicated hardware unit. Automatically trains local neural marketing models, runs real-time ad optimization cycles, and stores sensitive user-attribution data on-premise.",
+      features: [
+        "24-core local marketing model co-processor",
+        "On-site user data privacy firewall",
+        "Dynamic ad routing scheduler",
+        "Redundant liquid-cooled chassis design"
+      ],
+      defaultConfig: {
+        material: "anodized-titanium",
+        color: "#00f0ff",
+        text: "APEX NODE 0"
+      }
+    },
+    {
+      id: "prod-4",
+      title: "Executive Branding Obelisk",
+      price: 2500.00,
+      category: "Brand Assets",
+      description: "A luxury brand trophy machined from solid aerospace titanium. Designed for office lobbies or reception desks, featuring custom laser-engraved details and ambient LED highlights.",
+      features: [
+        "Aerospace-grade solid titanium construction",
+        "Subtle base ambient lighting",
+        "Precision fiber laser engraved surface",
+        "Premium presentation packaging"
+      ],
+      defaultConfig: {
+        material: "polished-gold",
+        color: "#d4af37",
+        text: "SPHERE CO"
+      }
+    },
+    {
+      id: "prod-5",
+      title: "Omnichannel Neural Suite",
+      price: 6800.00,
+      category: "Digital Systems",
+      description: "Our enterprise AI marketing engine. Automates ad placement across search, display, and social media platforms, providing 3D interactive dashboard reporting.",
+      features: [
+        "Automated ad bidding optimizer",
+        "Cross-channel campaign attribution",
+        "Deep learning conversion forecaster",
+        "Interactive WebGL client reporting panel"
+      ],
+      defaultConfig: {
+        material: "refractive-silica",
+        color: "#2563eb",
+        text: "NEURAL CORE"
+      }
     }
   ],
-  candidates: [
-    {
-      id: "cand-1",
-      jobId: "job-1",
-      name: "Alex Rivera",
-      email: "alex.rivera@email.com",
-      phone: "+1 (555) 019-2834",
-      links: ["linkedin.com/in/alexrivera", "github.com/alexr-dev"],
-      skills: ["React", "TypeScript", "Redux", "CSS", "HTML", "Git", "Jest", "Tailwind", "Next.js"],
-      experienceText: "Senior Software Engineer at TechCorp (3 years). Built responsive React web apps, reduced load times by 40%. Software Developer at WebFlow (2 years). worked with React, Redux, and CSS.",
-      educationText: "BS in Computer Science from Stanford University",
-      resumeText: "Alex Rivera\nalex.rivera@email.com\n+1 (555) 019-2834\nlinkedin.com/in/alexrivera\ngithub.com/alexr-dev\n\nSKILLS:\nReact, TypeScript, Redux, CSS, HTML, Git, Jest, Tailwind, Next.js\n\nEXPERIENCE:\nSenior Software Engineer at TechCorp (2023 - Present)\n- Built responsive React web apps\n- Reduced load times by 40%\n\nSoftware Developer at WebFlow (2021 - 2023)\n- Worked with React, Redux, and CSS\n\nEDUCATION:\nBS in Computer Science, Stanford University",
-      score: 95,
-      scoreBreakdown: {
-        skills: 50,
-        experience: 25,
-        education: 10,
-        completeness: 10
-      },
-      matchedSkills: ["React", "TypeScript", "Redux", "CSS", "HTML", "Git", "Jest"],
-      missingSkills: ["Webpack"],
-      suggestions: [
-        "Include mentions of 'Webpack' or bundling tools if you have worked with them.",
-        "Your experience aligns well with the requirements."
-      ],
-      status: "Interview",
-      createdAt: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000).toISOString()
-    },
-    {
-      id: "cand-2",
-      jobId: "job-1",
-      name: "Sarah Chen",
-      email: "sarah.chen@techmail.net",
-      phone: "+1 (555) 120-4492",
-      links: ["linkedin.com/in/sarahchen"],
-      skills: ["React", "CSS", "HTML", "Git", "Javascript", "Bootstrap"],
-      experienceText: "Junior Web Developer at PixelCraft (2 years). Maintained client websites using Javascript, HTML, and Bootstrap.",
-      educationText: "Self-taught, Associate Degree in Graphic Design",
-      resumeText: "Sarah Chen\nsarah.chen@techmail.net\n+1 (555) 120-4492\nlinkedin.com/in/sarahchen\n\nSummary:\nWeb Developer passionate about CSS and React.\n\nSkills:\nReact, CSS, HTML, Git, Javascript, Bootstrap\n\nExperience:\nJunior Web Developer at PixelCraft (2024 - Present)\n- Maintained client websites using Javascript, HTML, and Bootstrap.\n\nEducation:\nAssociate Degree in Graphic Design",
-      score: 55,
-      scoreBreakdown: {
-        skills: 25,
-        experience: 10,
-        education: 10,
-        completeness: 10
-      },
-      matchedSkills: ["React", "CSS", "HTML", "Git"],
-      missingSkills: ["TypeScript", "Redux", "Webpack", "Jest"],
-      suggestions: [
-        "Add core skill 'TypeScript' to your resume, as it is a key requirement.",
-        "Gain experience with 'Redux' or state management systems.",
-        "Mention unit testing libraries like 'Jest' to improve testing alignment.",
-        "Experience level is slightly below the requested 5 years (estimated 2 years)."
-      ],
-      status: "Screening",
-      createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString()
-    },
-    {
-      id: "cand-3",
-      jobId: "job-2",
-      name: "Marcus Johnson",
-      email: "marcus.j@codeflow.io",
-      phone: "+1 (555) 998-3821",
-      links: ["github.com/marcusj-codes"],
-      skills: ["Python", "Django", "PostgreSQL", "Docker", "REST API", "Git", "Flask", "SQLAlchemy"],
-      experienceText: "Software Engineer at DevGrid (4 years). Built backend REST APIs with Python and Flask. Configured Docker containers for deployment.",
-      educationText: "Bachelor of Science in Software Engineering, UT Austin",
-      resumeText: "Marcus Johnson\nmarcus.j@codeflow.io\n+1 (555) 998-3821\ngithub.com/marcusj-codes\n\nProfile:\nBackend software engineer specializing in Python and API architectures.\n\nSkills:\nPython, Django, PostgreSQL, Docker, REST API, Git, Flask, SQLAlchemy\n\nExperience:\nSoftware Engineer at DevGrid (2022 - Present)\n- Built backend REST APIs with Python and Flask\n- Configured Docker containers for deployment\n\nEducation:\nBS in Software Engineering, UT Austin",
-      score: 85,
-      scoreBreakdown: {
-        skills: 38,
-        experience: 27,
-        education: 10,
-        completeness: 10
-      },
-      matchedSkills: ["Python", "Django", "PostgreSQL", "Docker", "REST API", "Git"],
-      missingSkills: ["AWS", "Redis"],
-      suggestions: [
-        "Add cloud services experience (like 'AWS') to your resume.",
-        "Add database caching experience (like 'Redis') to your resume.",
-        "Excellent alignment on Python and framework experience."
-      ],
-      status: "Applied",
-      createdAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString()
-    }
-  ]
+  orders: []
 };
 
 function readDb() {
